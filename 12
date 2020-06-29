@@ -1,0 +1,84 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace mRx
+{
+    public partial class Form : System.Windows.Forms.Form
+    {
+        int X = 0;
+        public Form()
+        {
+            InitializeComponent();
+        }
+
+        private void click_btn_Click(object sender, EventArgs e)
+        {
+            X++; //увеличиваем на 1
+            X_lbl.Text = X.ToString(); // выводим в Label
+
+        }
+
+        private void But1_Click(object sender, EventArgs e)
+        {
+            X = X - 10;
+            X_lbl.Text = X.ToString();
+            if (X < 1000)
+                but2.Enabled = true;
+            if (X < 1000)
+                button1.Enabled = true;
+
+
+        }
+
+        private void but2_Click(object sender, EventArgs e)
+        {
+            X = X + 10;
+            X_lbl.Text = X.ToString();
+            if (X >= 1000)but2.Enabled = false;
+            if (X == 1000)
+             MessageBox.Show("You win"); if (X >= 1000)
+              button1.Enabled = false;
+
+
+        }
+
+        private void but3_Click(object sender, EventArgs e)
+        {
+            X = 0;
+            X_lbl.Text = X.ToString();
+ if (X == 1000)
+                MessageBox.Show("You win");
+            if (X < 500)
+                but2.Enabled = true;
+            if (X < 500)
+                button1.Enabled = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            X = X + 5;
+            X_lbl.Text = X.ToString();
+            if (X == 1000)
+                MessageBox.Show("You win");
+            if (X >= 50)
+                X = X + 15;
+            if (X >= 150)
+                X = X + 45;
+            
+            if (X >= 1000)
+                    button1.Enabled = false;
+            if (X >= 1000)
+                but2.Enabled = false;
+
+
+
+        }
+    }
+}
